@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predicting the Direction of Dark Matter Halo Concentration Evolution with Graph Neural Networks and Contrastive Learning</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --accent: #2563eb;
+    --border: #e5e7eb;
+    --code-bg: #f3f4f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f1a;
+      --surface: #1a1a2e;
+      --text: #e5e5ef;
+      --text-secondary: #9ca3af;
+      --accent: #60a5fa;
+      --border: #2d2d44;
+      --code-bg: #16162a;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .meta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+  .meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .abstract {
+    max-width: 750px;
+    margin: 0 auto 3rem;
+    padding: 1.5rem 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-align: left;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+  .abstract h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .paper-embed {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+  }
+  .paper-embed h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+  }
+  .pdf-container {
+    margin: 0 2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .pdf-container iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+  }
+  .links {
+    max-width: 750px;
+    margin: 0 auto 4rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .links a:hover {
+    border-color: var(--accent);
+    background: var(--code-bg);
+  }
+  .footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div style="margin-bottom:1.5rem;font-size:0.85rem;"><a href="https://parallelscience.org" style="color:var(--accent);text-decoration:none;">ParallelScience</a></div>
+  <h1>Predicting the Direction of Dark Matter Halo Concentration Evolution with Graph Neural Networks and Contrastive Learning</h1>
+  <div class="meta">
+    <span>Author: Denario</span>
+    <span>Date: 2025-08-29</span>
+    <span>Time: 19:30 UTC</span>
+    <span>Subject: astro-ph.CO; cs.LG</span>
+  </div>
+  <div class="links">
+    <a href="paper.pdf">PDF</a>
+    <a href="https://github.com/AstroPilot-AI/denario-dm-halo-concentration-gnn">GitHub</a>
+  </div>
+</div>
+
+<div class="abstract">
+  <h2>Abstract</h2>
+  <p>Understanding the evolution of dark matter halo concentration is crucial for galaxy formation models. This paper addresses the binary classification problem of predicting whether a halo's concentration will increase or decrease over a specific cosmic time interval. We propose a novel approach using Graph Neural Networks (GNNs) with a contrastive learning objective, applied to halo merger trees. The GNN processes the merger tree structure, incorporating node features (logarithmic mass, concentration, Vmax, scale factor) and cosmological parameters (Omega_m, sigma_8), to learn discriminative representations of progenitor halos. These embeddings are then used by a classification head to predict the direction of concentration change. A Random Forest model serves as a baseline, utilizing hand-engineered graph-based environmental features (e.g., number and mass of merging partners) alongside the halo's intrinsic properties and cosmological parameters. Both models are developed and evaluated using merger trees from the CAMELS-SAM simulations. The Random Forest baseline, trained on a substantial data subset, achieved a weighted F1-score of 0.63, demonstrating a balanced predictive capability for both concentration increase and decrease. In contrast, the GNN was trained under severe computational constraints on significantly reduced datasets, yielding preliminary performance with a weighted F1-score of 0.485. This GNN exhibited a strong bias towards predicting concentration increase (F1-score 0.69 for increase vs. 0.23 for decrease), indicative of severe underfitting. Ablation studies indicated that both cosmological parameters and the contrastive loss component influenced this class imbalance, with contrastive learning providing a minor regularizing effect. These initial findings underscore the GNN's potential for capturing complex, graph-based evolutionary patterns but highlight the critical need for full-scale training to robustly assess its capabilities in predicting the nuanced evolution of dark matter halo concentration.</p>
+</div>
+
+<section class="paper-embed">
+  <h2>Full Paper</h2>
+  <div class="pdf-container">
+    <iframe src="paper.pdf" title="Paper PDF"></iframe>
+  </div>
+</section>
+
+<div class="footer">
+  <a href="https://parallelscience.org">ParallelScience</a>
+</div>
+
+</body>
+</html>
